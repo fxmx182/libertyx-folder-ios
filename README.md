@@ -1,6 +1,8 @@
-# LibertyX Folder — iPhone e iPad
+# LibertyX Folder — iPhone
 
-O gerenciador de arquivos do Android ([/DATA/Claudinho/Arquivos](../../../Arquivos), pacote `com.mauricio.libertyx.files`) refeito em SwiftUI, com os mesmos parâmetros da versão de celular da Play: **tudo grátis, sem Pro, sem pasta segura, sem guia** (`PRO`, `PASTA_SEGURA` e `GUIA` desligados, como no flavor `celular`). Bundle `com.mauricio.libertyx.files`, iOS 17+.
+**Baixar:** [LibertyXFolder.ipa](https://github.com/fxmx182/libertyx-folder-ios/releases/download/latest/LibertyXFolder.ipa)
+
+O gerenciador de arquivos do Android ([libertyx-folder-android](https://github.com/fxmx182/libertyx-folder-android), pacote `com.mauricio.libertyx.files`) refeito em SwiftUI, com os mesmos parâmetros da versão de celular da Play: **tudo grátis, sem Pro, sem pasta segura, sem guia** (`PRO`, `PASTA_SEGURA` e `GUIA` desligados, como no flavor `celular`). Bundle `com.mauricio.libertyx.files`, iOS 17+.
 
 - **Início:** marca, pesquisa no aparelho, categorias (Imagens, Vídeos, Áudio, Documentos, Downloads, Compactados), armazenamento e rede.
 - **Pastas:** lista/grade, ordem natural, ocultos, trilha de navegação, puxar para atualizar, pesquisa na pasta e nas subpastas.
@@ -49,13 +51,13 @@ Como no Player: inglês é o padrão (`CFBundleDevelopmentRegion=en`), com portu
 
 ## Compilar e instalar
 
-Sem macOS em casa, **o CI é o compilador**: `.github/workflows/folder-ios.yml` roda em `macos-15` a cada push que toca `Folder/iOS/**`, gera o projeto com XcodeGen, compila sem assinar, assina ad-hoc (sem isso o iOS recusa com "spawn failed, error=85") e publica:
+Sem macOS em casa, **o CI é o compilador**: `.github/workflows/folder-ios.yml` roda em `macos-15` a cada push na `main`, gera o projeto com XcodeGen, compila sem assinar, assina ad-hoc (sem isso o iOS recusa com "spawn failed, error=85") e publica:
 
 ```bash
-curl -L -o LibertyXFolder.ipa https://github.com/fxmx182/LabPlayer/releases/download/folder-latest/LibertyXFolder.ipa
+curl -L -o LibertyXFolder.ipa https://github.com/fxmx182/libertyx-folder-ios/releases/download/latest/LibertyXFolder.ipa
 ```
 
-Instalar pelo Sideloadly (Windows), como o Player. Nenhum entitlement de propósito: continua assinável por Apple ID gratuito. Erro de compilação aparece como **anotação** do job (legível sem token: `GET /repos/fxmx182/LabPlayer/commits/{sha}/check-runs` → `.../annotations`). O commit sai carimbado em Configurações › Sobre.
+Instalar pelo Sideloadly (Windows), como o Player. Nenhum entitlement de propósito: continua assinável por Apple ID gratuito. Erro de compilação aparece como **anotação** do job (legível sem token: `GET /repos/fxmx182/libertyx-folder-ios/commits/{sha}/check-runs` → `.../annotations`). O commit sai carimbado em Configurações › Sobre.
 
 ## Armadilhas já pagas
 
@@ -63,3 +65,13 @@ Instalar pelo Sideloadly (Windows), como o Player. Nenhum entitlement de propós
 - **Progresso publicado onde todas as telas olham** redesenha tudo a cada atualização. O progresso das operações e do "Baixando…" mora em objetos à parte (`PainelDaOperacao`, `PainelDePreparo`), observados só pelos painéis; a raiz não observa quem publica muito.
 - **"Puxar para atualizar" que volta na hora** faz o indicador recolher aos trancos: a ação dura pelo menos meio segundo, e só troca a lista se ela mudou.
 - **SMBClient 0.3.1** trava em arquivo grande e erra no `STATUS_PENDING`: fixado numa revisão do main. "ConnectionError erro 2" é o `.cancelled` — a conexão foi fechada por nós; transferência tem conexão própria, prazo por bloco e retomada do mesmo byte.
+
+## Família LibertyX
+
+| App | Repositório |
+|---|---|
+| LibertyX Player — iPhone | [libertyx-player-ios](https://github.com/fxmx182/libertyx-player-ios) |
+| LibertyX Player — Android e TV | [libertyx-player-android](https://github.com/fxmx182/libertyx-player-android) |
+| LibertyX Folder — iPhone | [libertyx-folder-ios](https://github.com/fxmx182/libertyx-folder-ios) |
+| LibertyX Folder — Android e TV | [libertyx-folder-android](https://github.com/fxmx182/libertyx-folder-android) |
+| LibertyX Partition — Windows | [libertyx-partition](https://github.com/fxmx182/libertyx-partition) |

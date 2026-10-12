@@ -1,18 +1,15 @@
 name: Build IPA (LibertyX Folder)
 
-# O LibertyX Folder do iPhone (Folder/iOS). O mesmo caminho do Player: sem
+# O LibertyX Folder do iPhone. O mesmo caminho do Player: sem
 # macOS em casa, quem compila é este runner, o .ipa sai sem assinatura de
 # verdade (só ad-hoc) e o Sideloadly/AltStore reassina no aparelho com o Apple
-# ID. Só acorda quando o Folder do iPhone muda.
+# ID.
 on:
   push:
     branches: [main]
-    paths:
-      - "Folder/iOS/**"
-      - ".github/workflows/folder-ios.yml"
+    paths-ignore:
+      - "**.md"
   pull_request:
-    paths:
-      - "Folder/iOS/**"
   workflow_dispatch:
 
 concurrency:
@@ -25,10 +22,7 @@ jobs:
     runs-on: macos-15
     timeout-minutes: 30
     permissions:
-      contents: write   # para publicar o release "folder-latest"
-    defaults:
-      run:
-        working-directory: Folder/iOS
+      contents: write   # para publicar o release "latest"
 
     steps:
       - uses: actions/checkout@v4
@@ -126,23 +120,23 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: LibertyXFolder-ipa
-          path: Folder/iOS/LibertyXFolder.ipa
+          path: LibertyXFolder.ipa
           retention-days: 30
           if-no-files-found: error
 
       # Asset de release baixa com um curl seco, sem login — direto do
       # servidor de casa para o Sideloadly.
-      - name: Publicar release "folder-latest"
+      - name: Publicar release "latest"
         if: github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release delete folder-latest --yes --cleanup-tag 2>/dev/null || true
-          gh release create folder-latest LibertyXFolder.ipa \
+          gh release delete latest --yes --cleanup-tag 2>/dev/null || true
+          gh release create latest LibertyXFolder.ipa \
             --title "LibertyX Folder (iPhone) — build mais recente" \
             --notes "Compilado de ${GITHUB_SHA:0:7}. Assinado ad-hoc; o Sideloadly/AltStore reassina no aparelho.
 
           \`\`\`
-          curl -L -o LibertyXFolder.ipa https://github.com/${GITHUB_REPOSITORY}/releases/download/folder-latest/LibertyXFolder.ipa
+          curl -L -o LibertyXFolder.ipa https://github.com/${GITHUB_REPOSITORY}/releases/download/latest/LibertyXFolder.ipa
           \`\`\`" \
             --prerelease

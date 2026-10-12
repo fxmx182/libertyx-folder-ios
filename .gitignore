@@ -1,0 +1,15 @@
+# Gerado pelo XcodeGen — nunca versionar, senão dá conflito a cada build.
+*.xcodeproj/
+*.xcworkspace/
+
+# Build
+build/
+DerivedData/
+payload/
+*.ipa
+*.dSYM.zip
+
+# macOS / editores
+.DS_Store
+*.swp
+.vscode/
