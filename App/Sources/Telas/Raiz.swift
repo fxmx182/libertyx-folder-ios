@@ -10,6 +10,7 @@ enum Rota: Hashable {
     case busca(String, dentro: Loc?)
     case rede
     case configuracoes
+    case pro
 }
 
 /// Itens escolhidos em "Mover"/"Copiar", esperando a pasta de destino.
@@ -59,11 +60,14 @@ struct Raiz: View {
                 Inicio()
                     .navigationDestination(for: Rota.self) { r in
                         switch r {
+                        // A rede é Pro: depois do teste, a tela do Pro entra no lugar.
+                        case .pasta(let l) where l.ehSmb: ProPortao { Listagem(modo: .pasta(l)) }
                         case .pasta(let l): Listagem(modo: .pasta(l))
                         case .categoria(let c): Listagem(modo: .categoria(c))
                         case .busca(let t, let d): Listagem(modo: .busca(t, d))
-                        case .rede: TelaDeRede()
+                        case .rede: ProPortao { TelaDeRede() }
                         case .configuracoes: Configuracoes()
+                        case .pro: TelaPro()
                         }
                     }
             }

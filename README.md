@@ -2,13 +2,28 @@
 
 **Baixar:** [LibertyXFolder.ipa](https://github.com/fxmx182/libertyx-folder-ios/releases/download/latest/LibertyXFolder.ipa)
 
-O gerenciador de arquivos do Android ([libertyx-folder-android](https://github.com/fxmx182/libertyx-folder-android), pacote `com.mauricio.libertyx.files`) refeito em SwiftUI, com os mesmos parâmetros da versão de celular da Play: **tudo grátis, sem Pro, sem pasta segura, sem guia** (`PRO`, `PASTA_SEGURA` e `GUIA` desligados, como no flavor `celular`). Bundle `com.mauricio.libertyx.files`, iOS 17+.
+O gerenciador de arquivos do Android ([libertyx-folder-android](https://github.com/fxmx182/libertyx-folder-android), pacote `com.mauricio.libertyx.files`) refeito em SwiftUI, sem pasta segura e sem guia, como a versão de celular da Play — mas com o **Pro da rede**, como o Folder de TV (ver abaixo). Bundle `com.mauricio.libertyx.files`, iOS 17+.
 
 - **Início:** marca, pesquisa no aparelho, categorias (Imagens, Vídeos, Áudio, Documentos, Downloads, Compactados), armazenamento e rede.
 - **Pastas:** lista/grade, ordem natural, ocultos, trilha de navegação, puxar para atualizar, pesquisa na pasta e nas subpastas.
 - **Seleção** (toque longo, como no Android): mover, copiar (colar na pasta de destino), compartilhar, excluir, renomear, abrir com, salvar na galeria, detalhes.
 - **SMB:** busca automática (Bonjour + varredura da porta 445 + nome NetBIOS), compartilhamentos, usuário/senha ou convidado, ler/gravar/renomear/mover/excluir, miniaturas de foto, vídeo e áudio **tocando sem baixar**.
 - **Operações** com progresso e cancelamento, entre quaisquer dois lugares; nunca sobrescreve ("nome (1).ext").
+
+
+## LibertyX Folder Pro
+
+Os arquivos do aparelho são grátis para sempre; a **rede** (servidores SMB,
+busca automática, vídeo e música sem baixar) é Pro, com sete dias grátis — o
+mesmo modelo do Folder de TV.
+
+Sem App Store não há StoreKit: a compra é a **chave LibertyX**, vendida com
+Bitcoin ou USDT/USDC pelo bot da loja no Telegram
+([@libertx_partition_bot](https://t.me/libertx_partition_bot?start=folder)).
+`Core/Pro.swift` confere a chave sem internet (produto 3 = Folder ou 9 = pacote,
+mesma chave pública do Partition e do Player); teste e chave ficam no Keychain.
+A porta está no roteador (`Raiz.swift`): a tela de servidores e as pastas SMB
+passam por `ProPortao` (`Telas/TelaPro.swift`). Configurações › LibertyX Pro.
 
 ## O que muda no iOS: o acesso às pastas
 
