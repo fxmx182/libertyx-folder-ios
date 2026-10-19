@@ -175,31 +175,3 @@
 "Toque em Selecionar no seletor para marcar várias de uma vez, como as pastas de cada app" = "Toca Seleccionar en el selector para marcar varias a la vez, como las carpetas de cada app";
 "Um nome para reconhecer de onde é cada pasta. Ele só muda aqui no app; a pasta continua com o nome dela." = "Un nombre para reconocer de dónde es cada carpeta. Solo cambia aquí en la app; la carpeta conserva su nombre.";
 "As pastas dos outros apps aparecem dentro de No iPhone no app Arquivos, mas para o iOS cada uma é separada: escolher No iPhone não libera nenhuma delas. No seletor, toque em Selecionar e marque todas de uma vez." = "Las carpetas de otras apps aparecen dentro de En mi iPhone en la app Archivos, pero para iOS cada una es independiente: elegir En mi iPhone no libera ninguna. En el selector, toca Seleccionar y márcalas todas a la vez.";
-
-/* LibertyX Pro e a chave do Telegram */
-"Servidores da rede" = "Servidores de red";
-"Abra, copie e mova arquivos entre o iPhone e o PC ou servidor." = "Abre, copia y mueve archivos entre el iPhone y el PC o servidor.";
-"Busca automática" = "Búsqueda automática";
-"Encontra sozinho os computadores da rede de casa." = "Encuentra solo los equipos de la red de casa.";
-"Vídeo e música da rede" = "Video y música de la red";
-"Tocam direto do servidor, sem baixar antes." = "Se reproducen directo desde el servidor, sin descargar antes.";
-"Os arquivos do iPhone, as categorias e a pesquisa continuam grátis para sempre." = "Los archivos del iPhone, las categorías y la búsqueda siguen gratis para siempre.";
-"Pagar com Bitcoin ou USDT" = "Pagar con Bitcoin o USDT";
-"Pelo Telegram — a chave chega na hora" = "Por Telegram — la clave llega al instante";
-"Pagamento único, sem assinatura. A mesma chave vale no iPhone, no Android e na TV." = "Pago único, sin suscripción. La misma clave sirve en iPhone, Android y TV.";
-"Tenho uma chave" = "Tengo una clave";
-"Licença %@" = "Licencia %@";
-"Pro ativo — obrigado!" = "Pro activo — ¡gracias!";
-"Teste grátis: %lld dias restantes" = "Prueba gratis: quedan %lld días";
-"Seu teste grátis terminou" = "Tu prueba gratis terminó";
-"Pro ativado com a sua chave — obrigado!" = "Pro activado con tu clave — ¡gracias!";
-"Cole a chave que o bot da LibertyX mandou no Telegram. Ela começa com LXP1." = "Pega la clave que el bot de LibertyX te envió por Telegram. Empieza con LXP1.";
-"Colar" = "Pegar";
-"Ativar" = "Activar";
-"Ainda não tem chave? Compre pelo Telegram" = "¿Aún no tienes clave? Cómprala por Telegram";
-"Ativar com uma chave" = "Activar con una clave";
-"Isso não parece uma chave completa. Copie de novo no Telegram e cole inteira." = "Eso no parece una clave completa. Cópiala de nuevo en Telegram y pégala entera.";
-"Esta chave não é válida. Confira se copiou ela toda." = "Esta clave no es válida. Revisa que la copiaste completa.";
-"Esta chave é de outro app LibertyX, não do Folder." = "Esta clave es de otra app LibertyX, no de Folder.";
-"Esta chave é de uma versão mais nova. Atualize o app e tente de novo." = "Esta clave es de una versión más nueva. Actualiza la app e inténtalo de nuevo.";
-"Rede SMB · pagamento único pelo Telegram" = "Red SMB · pago único por Telegram";

@@ -96,14 +96,6 @@ struct Configuracoes: View {
                     }
                 }
 
-                TituloDeSecao(texto: "LibertyX Pro")
-                Cartao {
-                    LinhaDeCartao(simbolo: "star.circle.fill", titulo: String(localized: "LibertyX Pro"),
-                                  sub: String(localized: "Rede SMB · pagamento único pelo Telegram")) {
-                        nav.abrir(.pro)
-                    }
-                }
-
                 TituloDeSecao(texto: "Sobre")
                 Cartao {
                     HStack(spacing: 16) {
